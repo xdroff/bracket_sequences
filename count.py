@@ -13,4 +13,4 @@ def main(bracket_sequences: str):
         print(f'Bracket sequences: "{bracket_sequences}" is not correct')
 
 if __name__ == "__main__":
-    main('())')
+    main('()()')
