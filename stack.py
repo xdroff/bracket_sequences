@@ -25,30 +25,20 @@ def main(bracket_sequences: str):
                brackets_opening[3]: brackets_closing[3]}
     stack = Stack()
     for x in bracket_sequences:
-        #if x in brackets_closing:
-        #    break
+        balanced_closing = True
         if x in brackets_opening:
             stack.push(x)
         elif x in brackets_closing:
-            balanced_closing = True
             try:
                 if mapping[stack.top()] == x:
                     stack.pop()
             except KeyError:
                 balanced_closing = False
                 break
-    if stack.is_empty():
-        if balanced_closing:
+    if stack.is_empty() and balanced_closing:
             print(f'Bracket sequences: "{bracket_sequences}" is correct')
-        else:
-            print(f'Bracket sequences: "{bracket_sequences}" is not correct')
     else:
         print(f'Bracket sequences: "{bracket_sequences}" is not correct')
 
 if __name__ == "__main__":
-    main('([)]')
-
-
-                
-                
-
+    main('{(})')
