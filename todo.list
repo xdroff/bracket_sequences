@@ -1,3 +1,2 @@
-1. Add cli interface (standard lib, and click)
-2. Add unittest
-3. Add makefile
+1. Add unittest
+2. Add makefile
